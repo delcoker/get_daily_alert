@@ -1,0 +1,14 @@
+.idea/
+/swagger-ui-3.24.3/
+
+.swagger/swagger2.yaml
+
+.swagger/
+
+__pycache__/
+
+python.zip
+python
+
+lambda_function_trigger.py
+/run_once_a_year/
