@@ -19,7 +19,7 @@ def lambda_handler(event, context, daily_alert_service: DailyAlertService = cont
 
     return {
         'statusCode': 200,
-        'body': json.dumps(alert_data)
+        'body': alert_data
     }
 
 
