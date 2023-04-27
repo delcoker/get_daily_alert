@@ -1,6 +1,6 @@
 import requests
 
-from main.infrastructure.repositories.bearer_token_repository import BearerTokenRepository
+from main.domain.repositories.bearer_token_repository import BearerTokenRepository
 
 
 class BearerTokenRepositoryImpl(BearerTokenRepository):

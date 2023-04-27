@@ -2,7 +2,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from main.infrastructure.repositories.email_repository import EmailRepository
+from main.domain.repositories.email_repository import EmailRepository
 
 
 class EmailRepositoryImpl(EmailRepository):
@@ -17,7 +17,7 @@ class EmailRepositoryImpl(EmailRepository):
         message['From'] = self.email
         message['To'] = ', '.join(to_email_list)
         message['Subject'] = subject
-        message.attach(MIMEText(body, 'plain'))
+        message.attach(MIMEText(body))
 
         server = smtplib.SMTP(self.smtp_server, self.smtp_port)
         server.starttls()

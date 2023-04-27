@@ -1,6 +1,6 @@
 import requests
 
-from main.infrastructure.repositories.authenticated_request_repository import AuthenticatedRequestRepository
+from main.domain.repositories.authenticated_request_repository import AuthenticatedRequestRepository
 
 
 class AuthenticatedRequestRepositoryImpl(AuthenticatedRequestRepository):

@@ -8,12 +8,6 @@ from main.application.services.daily_alert_service import DailyAlertService
 from main.infrastructure.repositories.authenticated_request_repository_impl import AuthenticatedRequestRepositoryImpl
 from main.infrastructure.repositories.bearer_token_repository_impl import BearerTokenRepositoryImpl
 
-BEARER_TOKEN = os.getenv('BEARER_TOKEN')
-
-username = os.getenv('username')
-password = os.getenv('password')
-bearer_token_url = os.getenv('bearer_token_url')
-
 
 def lambda_handler(event, context, daily_alert_service: DailyAlertService = container.daily_alert_service):
     # RUN ONCE A YEAR
@@ -45,6 +39,10 @@ def get_region_country_data_joined():
 
 
 def get_region_country_data():
+    username = os.getenv('username')
+    password = os.getenv('password')
+    bearer_token_url = os.getenv('bearer_token_url')
+
     # read csv to get regions
     population_df = pd.read_csv('datasets/population.csv')
     region_ids = population_df['region_id'].tolist()
