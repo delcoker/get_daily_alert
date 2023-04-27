@@ -51,7 +51,7 @@ def get_region_country_data():
     # returns country information for a given region
 
     total_requests_per_token = 200
-    start_position = 3200  # if bearer expires, insert last i value
+    start_position = 0  # if bearer expires, insert last i value
 
     for i in range(start_position + total_requests_per_token, len(region_ids)):
         if i % total_requests_per_token == 0:

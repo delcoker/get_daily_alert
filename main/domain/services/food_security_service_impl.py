@@ -21,7 +21,7 @@ class FoodSecurityServiceImpl(FoodSecurityService):
     def get_alerts(self, df_now, df_30_years_ago):
         food_security_df = self.get_food_security(df_now, df_30_years_ago)
         self.craft_email(food_security_df)
-        self.craft_admin_alert(food_security_df)
+        self.craft_admin_email(food_security_df)
         return food_security_df
 
     def get_admin_alert(self, food_security_df):
@@ -68,7 +68,7 @@ class FoodSecurityServiceImpl(FoodSecurityService):
                    f"\nwhich was {insecure_people_30}"
             self.email_repository.send_email(email, subject, body)
 
-    def craft_admin_alert(self, security_df):
+    def craft_admin_email(self, security_df):
         email = os.getenv("admin_email")
         food_security_json = security_df.to_json(orient="records")
 
