@@ -1,3 +1,4 @@
+import json
 import os
 
 import functional as pyfunctional
@@ -18,7 +19,7 @@ def lambda_handler(event, context, daily_alert_service: DailyAlertService = cont
 
     return {
         'statusCode': 200,
-        'body': alert_data
+        'body': json.dumps(alert_data)
     }
 
 
