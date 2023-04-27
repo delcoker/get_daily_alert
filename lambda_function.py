@@ -19,7 +19,12 @@ def lambda_handler(event, context, daily_alert_service: DailyAlertService = cont
 
     return {
         'statusCode': 200,
-        'body': alert_data
+        'body': alert_data,
+        'headers': {
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
+        }
     }
 
 
