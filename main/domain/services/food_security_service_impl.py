@@ -24,10 +24,6 @@ class FoodSecurityServiceImpl(FoodSecurityService):
         self.craft_admin_email(food_security_df)
         return food_security_df
 
-    def get_admin_alert(self, food_security_df):
-        self.craft_email(food_security_df)
-        return food_security_df
-
     def get_food_security(self, df_now, df_30_years_ago):
         security = df_now.merge(df_30_years_ago)
         security = security.merge(self.region_country_df, how='left', on='region_id')
