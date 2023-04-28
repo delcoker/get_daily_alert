@@ -1,9 +1,8 @@
 import datetime
-import re
 import datetime as dt
+import re
 from inspect import getframeinfo, stack
 
-import functional as pyfunctional
 import pandas as pd
 from pandas import DataFrame
 
@@ -166,6 +165,7 @@ class UtilityServiceImpl:
             forecast['Month'] = forecast['Date'].dt.month
 
             return forecast
+
 
 def print(*args, **kwargs):
     caller = getframeinfo(stack()[1][0])

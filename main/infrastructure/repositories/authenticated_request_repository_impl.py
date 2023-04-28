@@ -9,7 +9,6 @@ class AuthenticatedRequestRepositoryImpl(AuthenticatedRequestRepository):
         self.token_repository = token_repository
 
     def make_request(self, url, method='GET', headers=None, data=None, json=None, params=None):
-
         bearer_token = self.token_repository.get_bearer_token()
 
         headers = headers or {}
